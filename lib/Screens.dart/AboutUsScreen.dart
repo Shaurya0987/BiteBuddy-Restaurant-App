@@ -1,5 +1,6 @@
 import 'package:bitebuddy/Components/AboutPageImages.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class AboutUsPage extends StatelessWidget {
   const AboutUsPage({super.key});
@@ -79,6 +80,66 @@ class AboutUsPage extends StatelessWidget {
               const SizedBox(height: 10),
               Text("Find Us", style: TextStyle(fontSize: 27)),
               const SizedBox(height: 10),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image(image: AssetImage("assets/images/map.jpg")
+                )),
+              SizedBox(height: 15,),
+              Text("Contact & Hours",style: TextStyle(fontSize: 21),),
+              SizedBox(height: 15,),
+              Row(
+                children: [
+                  Icon(Icons.location_on,color: Colors.deepOrange,size: 35,),
+                  SizedBox(width: 15,),
+                  Text("123 Rue de la Gastronomie,75001 Paris France",style: TextStyle(fontSize: 14),)
+                ],
+              ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
+                  Icon(Icons.call,color: Colors.deepOrange,size: 35,),
+                  SizedBox(width: 15,),
+                  Text("+33123 45 67 89",style: TextStyle(fontSize: 14),)
+                ],
+              ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
+                  Icon(Icons.email,color: Colors.deepOrange,size: 35,),
+                  SizedBox(width: 15,),
+                  Text("reservations@labellivie.com",style: TextStyle(fontSize: 14),)
+                ],
+              ),
+              SizedBox(height: 20,),
+              Row(
+                children: [
+                  Icon(Icons.access_time_sharp,color: Colors.deepOrange,size: 35,),
+                  SizedBox(width: 15,),
+                  Column(
+                    children: [
+                      Text("Mon-Fri: 12:00 PM-10:00 PM\n",style: TextStyle(fontSize: 14),),
+                      Text("Sat-Sun: 11:00 AM-11:00 PM",style: TextStyle(fontSize: 14),)
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(height: 35,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 50,vertical: 15),backgroundColor: Colors.deepOrange.shade100),
+                    onPressed: (){},
+                    child: Text("Order Now",style: TextStyle(color: Colors.deepOrange,fontSize: 16),)
+                    ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15),backgroundColor: Colors.deepOrange),
+                    onPressed: (){},
+                    child: Text("Make Reservation",style: TextStyle(color: Colors.white,fontSize: 16),)
+                    ),
+                ],
+              ),
+              SizedBox(height: 20,)
             ],
           ),
         ),
