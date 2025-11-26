@@ -25,11 +25,11 @@ class TodaysSpeacialFoodImages extends StatelessWidget {
 
           // ⭐ FIXED IMAGE WIDGET (NO UI CHANGE)
           ClipRRect(
-            borderRadius: BorderRadius.circular(12),   // rounded corners
+            borderRadius: BorderRadius.circular(12),   
             child: SizedBox(
               height: 250,
               width: 300,
-              child: image,                           // ← Now works correctly
+              child: image,                           
             ),
           ),
 
