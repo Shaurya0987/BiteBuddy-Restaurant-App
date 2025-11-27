@@ -101,7 +101,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
               ),
               
-              SizedBox(height: 3,)
+              SizedBox(height: 30,)
             ],
           ),
         ),
