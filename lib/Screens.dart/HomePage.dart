@@ -1,9 +1,9 @@
-import 'package:bitebuddy/Components/AppBarOfHome.dart';
-import 'package:bitebuddy/Components/HomeImageBanner.dart';
-import 'package:bitebuddy/Components/MenuAndReservationcontainer.dart';
-import 'package:bitebuddy/Components/ThankYouContainer.dart';
-import 'package:bitebuddy/Components/TodaysSpecialImages.dart';
-import 'package:bitebuddy/Components/orderAndBookButton.dart';
+import 'package:bitebuddy/Components/HomePageComponents/AppBarOfHome.dart';
+import 'package:bitebuddy/Components/HomePageComponents/HomeImageBanner.dart';
+import 'package:bitebuddy/Components/HomePageComponents/MenuAndReservationcontainer.dart';
+import 'package:bitebuddy/Components/HomePageComponents/ThankYouContainer.dart';
+import 'package:bitebuddy/Components/HomePageComponents/TodaysSpecialImages.dart';
+import 'package:bitebuddy/Components/HomePageComponents/orderAndBookButton.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:flutter/material.dart';

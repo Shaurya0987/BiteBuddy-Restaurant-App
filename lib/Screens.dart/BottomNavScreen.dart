@@ -1,4 +1,5 @@
 import 'package:bitebuddy/Screens.dart/AboutUsScreen.dart';
+import 'package:bitebuddy/Screens.dart/FullMenuScreen.dart';
 import 'package:bitebuddy/Screens.dart/HomePage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = [
     const HomePage(),
-    const Center(child: Text("Menu")),
+    const MenuScreen(),
     const Center(child: Text("Orders")),
     const AboutUsPage(),
   ];
