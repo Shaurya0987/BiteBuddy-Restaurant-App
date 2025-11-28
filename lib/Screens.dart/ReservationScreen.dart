@@ -1,5 +1,8 @@
 import 'package:bitebuddy/ReservationPageComponents/CalendarWidget.dart';
 import 'package:bitebuddy/ReservationPageComponents/NumberOfGuests.dart';
+import 'package:bitebuddy/ReservationPageComponents/SizedBoxWidget.dart';
+import 'package:bitebuddy/ReservationPageComponents/TImeWidget.dart';
+import 'package:bitebuddy/ReservationPageComponents/TextFeildWidget.dart';
 import 'package:flutter/material.dart';
 
 class ReservationScreen extends StatefulWidget {
@@ -11,6 +14,7 @@ class ReservationScreen extends StatefulWidget {
 
 class _ReservationScreenState extends State<ReservationScreen> {
   int selectedIndex = 0;
+
   List<String> time = [
     "6:00PM",
     "6:30PM",
@@ -29,9 +33,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
         centerTitle: true,
         title: Text("Make a Reservation"),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_rounded, size: 30),
         ),
         actions: [
@@ -41,100 +43,67 @@ class _ReservationScreenState extends State<ReservationScreen> {
           ),
         ],
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(18.0),
+
         child: SingleChildScrollView(
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
+
             children: [
+              // ---------------- GUESTS ----------------
               Text("Number of Guests", style: TextStyle(fontSize: 19)),
               SizedBox(height: 10),
+
               Container(
                 height: 90,
+                padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.white,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: NumberOfGuestsWidget(),
-                ),
+                child: NumberOfGuestsWidget(),
               ),
+
               SizedBox(height: 5),
+
               Text(
-                "For parties of 8 or more,please call us directly",
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey.shade600,
-                  fontWeight: FontWeight.w200,
-                ),
+                "For parties of 8 or more, please call us directly",
+                style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
               ),
+
               SizedBox(height: 15),
+
+              // ---------------- CALENDAR ----------------
               Text("Select a Date", style: TextStyle(fontSize: 19)),
               SizedBox(height: 10),
               CalendarContainer(),
-              SizedBox(height: 15),
+
+              SizedBox(height: 20),
+
+              // ---------------- TIME ----------------
               Text("Choose a Time", style: TextStyle(fontSize: 21)),
               SizedBox(height: 10),
-              ScrollViewOfTime(),
+
+              ScrollViewOfTime(),     // ⭐ ADDED BACK HERE
+
               SizedBox(height: 20),
+
+              // ---------------- SPECIAL REQUESTS ----------------
               Text(
                 "Special Requests(Optional)",
                 style: TextStyle(fontSize: 19),
               ),
-              SizedBox(height: 20),
-              TextField(
-                maxLines: 4,
-                decoration: InputDecoration(
-                  hintText:
-                      "e.g. dietary restrictions, high chair, birthday celebration",
-                  hintStyle: TextStyle(
-                    color: Colors.grey.shade500,
-                    fontSize: 14,
-                  ),
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 12,
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
+              SizedBox(height: 15),
 
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(
-                      color: Colors.grey.shade300,
-                      width: 1,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(
-                      color: Colors.deepOrange,
-                      width: 1.5,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 30,),
-              SizedBox(
-                height: 50,
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(8)
-                    )
-                  ),
-                  onPressed: (){},
-                  child: Text("Confirm Reservation",style: TextStyle(
-                    fontSize: 19,
-                    color: Colors.white
-                  ),)
-                  ),
-              ),
-              SizedBox(height: 10,)
+              TextFeildWidget(),
+
+              SizedBox(height: 30),
+
+              // ---------------- CONFIRM BUTTON ----------------
+              SizedBoxWidget(),
+              SizedBox(height: 20),
             ],
           ),
         ),
@@ -142,6 +111,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
     );
   }
 
+  // ⭐⭐ SCROLL VIEW OF TIME (YOU MISSED THIS)
   SingleChildScrollView ScrollViewOfTime() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -157,46 +127,6 @@ class _ReservationScreenState extends State<ReservationScreen> {
             },
           );
         }),
-      ),
-    );
-  }
-}
-
-class TimeWidget extends StatelessWidget {
-  final String title;
-  final bool isSelected;
-  final VoidCallback onTap;
-
-  const TimeWidget({
-    super.key,
-    required this.title,
-    required this.isSelected,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: SizedBox(
-        width: 100,
-        height: 40,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: isSelected ? Colors.blue : Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusGeometry.circular(16),
-            ),
-          ),
-          onPressed: onTap,
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 14,
-              color: isSelected ? Colors.white : Colors.black,
-            ),
-          ),
-        ),
       ),
     );
   }
