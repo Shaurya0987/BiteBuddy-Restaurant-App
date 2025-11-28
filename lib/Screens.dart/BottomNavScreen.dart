@@ -1,6 +1,7 @@
 import 'package:bitebuddy/Screens.dart/AboutUsScreen.dart';
 import 'package:bitebuddy/Screens.dart/FullMenuScreen.dart';
 import 'package:bitebuddy/Screens.dart/HomePage.dart';
+import 'package:bitebuddy/Screens.dart/OrderPage.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     const HomePage(),
     const MenuScreen(),
-    const Center(child: Text("Orders")),
+    const OrderPage(),
     const AboutUsPage(),
   ];
 

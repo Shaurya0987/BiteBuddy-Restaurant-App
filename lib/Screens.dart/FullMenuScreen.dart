@@ -86,7 +86,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 height:60,
                 decoration: BoxDecoration(
                   color: Colors.deepOrange,
-                  borderRadius: BorderRadiusGeometry.circular(24)
+                  borderRadius: BorderRadiusGeometry.circular(34)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
