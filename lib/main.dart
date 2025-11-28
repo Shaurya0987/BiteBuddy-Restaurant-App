@@ -1,5 +1,6 @@
 import 'package:bitebuddy/Screens.dart/BottomNavScreen.dart';
 import 'package:bitebuddy/Screens.dart/HomePage.dart';
+import 'package:bitebuddy/Screens.dart/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'BiteBuddy',
-      home: MainScreen()
+      home: SplashScreen()
     );
   }
 }
