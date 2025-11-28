@@ -1,5 +1,9 @@
 import 'package:bitebuddy/OrderPageComponents.dart/AppBar.dart';
+import 'package:bitebuddy/OrderPageComponents.dart/LocationAndCardWidget.dart';
+import 'package:bitebuddy/OrderPageComponents.dart/OrderHistoryWidget.dart';
 import 'package:bitebuddy/OrderPageComponents.dart/OrderItems.dart';
+import 'package:bitebuddy/OrderPageComponents.dart/PlaceOrderWidget.dart';
+import 'package:bitebuddy/OrderPageComponents.dart/TotalMoneyWidget.dart';
 import 'package:bitebuddy/OrderPageComponents.dart/promoCodeRow.dart';
 import 'package:flutter/material.dart';
 
@@ -93,72 +97,15 @@ class _OrderPageState extends State<OrderPage> {
               SizedBox(height: 15,),
               Text("Order Summary",style: TextStyle(fontSize: 21),),
               SizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Subtotal",style: TextStyle(color: Colors.grey.shade600,fontSize: 17),),
-                  Text("\$29.49",style: TextStyle(fontSize: 15),)
-                ],
-              ),
-              SizedBox(height: 5,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Delivery Fee",style: TextStyle(color: Colors.grey.shade600,fontSize: 17),),
-                  Text("\$5.00",style: TextStyle(fontSize: 15),)
-                ],
-              ),
-              SizedBox(height: 5,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Taxes & Fees",style: TextStyle(color: Colors.grey.shade600,fontSize: 17),),
-                  Text("\$2.76",style: TextStyle(fontSize: 15),)
-                ],
-              ),
+              OrderhistoryTotal(),
               SizedBox(height: 5,),
               Divider(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Total",style: TextStyle(fontSize: 19),),
-                    Text("\$37.25",style: TextStyle(fontSize: 19),)
-                  ],
-                ),
-              ),
+              TotalMoneyWidget(),
               Divider(),
               SizedBox(height: 20,),
-              Card(
-                elevation: 0,
-                child: ListTile(
-                  leading: Icon(Icons.location_on,color: Colors.grey.shade600,),
-                  title: Text("123 Market St,San Francisco"),
-                  subtitle: Text("Est. Delivery:30-45 min",style: TextStyle(color: Colors.grey.shade600,),),
-                  trailing: Text("Change",style: TextStyle(color: Colors.blue,fontSize: 15),),
-                ),
-              ),
-              SizedBox(height: 10,),
-              Card(
-                elevation: 0,
-                child: ListTile(
-                  leading: Icon(Icons.add_card,color: Colors.grey.shade600,),
-                  title: Text("Visa****1234"),
-                  subtitle: Text("Default payment method",style: TextStyle(color: Colors.grey.shade600,),),
-                  trailing: Text("Change",style: TextStyle(color: Colors.blue,fontSize: 15),),
-                ),
-              ),
+              LocationAndCardWidget(),
               SizedBox(height: 50,),
-              Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(12)
-                ),
-                child: Center(child: Text("Place Order  .  \$37.25",style: TextStyle(color: Colors.white,fontSize: 18),)),
-              ),
+              PlaceOrderWidget(),
 
               SizedBox(height: 30),
             ],
@@ -168,5 +115,8 @@ class _OrderPageState extends State<OrderPage> {
     );
   }
 }
+
+
+
 
 

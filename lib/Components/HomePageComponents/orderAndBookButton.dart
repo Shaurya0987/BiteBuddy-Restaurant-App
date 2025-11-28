@@ -1,3 +1,4 @@
+import 'package:bitebuddy/Screens.dart/ReservationScreen.dart';
 import 'package:flutter/material.dart';
 
 class OrderandBookWidget extends StatelessWidget {
@@ -37,7 +38,9 @@ class OrderandBookWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(25),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ReservationScreen()));
+          },
           child: Text(
             "Book a Table",
             style: TextStyle(color: Colors.black, fontSize: 17),
