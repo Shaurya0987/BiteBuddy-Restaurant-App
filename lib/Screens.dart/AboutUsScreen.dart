@@ -1,6 +1,5 @@
 import 'package:bitebuddy/Components/HomePageComponents/AboutPageImages.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class AboutUsPage extends StatelessWidget {
   const AboutUsPage({super.key});

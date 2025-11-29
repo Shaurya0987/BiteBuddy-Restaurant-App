@@ -1,5 +1,4 @@
-import 'package:bitebuddy/Screens.dart/BottomNavScreen.dart';
-import 'package:bitebuddy/Screens.dart/HomePage.dart';
+
 import 'package:bitebuddy/Screens.dart/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
